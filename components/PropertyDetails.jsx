@@ -80,7 +80,7 @@ const PropertyDetails = ({ property }) => {
           </p>
           <p>
             <FaRulerCombined className="inline-block mr-2" />
-            {property.square_feet}{" "}
+            {property.squareFeet}{" "}
             <span className="hidden sm:inline">sqft</span>
           </p>
         </div>
@@ -96,7 +96,7 @@ const PropertyDetails = ({ property }) => {
 
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none">
           {property.amenities.map((amenity, index) => (
-            <li>
+            <li key={index}>
               <FaCheck className="text-green-600 mr-1 mt-1 inline-block" />{" "}
               {amenity}
             </li>
