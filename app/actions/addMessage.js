@@ -3,7 +3,7 @@ import connectDB from "@/config/database";
 import Message from "@/models/Message";
 import { getSessionUser } from "@/utils/getSessionUser";
 
-const addMessage = async (formData) => {
+const addMessage = async (previousState, formData) => {
   //Connect to the database
   await connectDB();
   //Get the user session
@@ -26,7 +26,7 @@ const newMessage = new Message({
     name: formData.get("name"),
     email: formData.get("email"),
     phone: formData.get("phone"),
-});
+}); 
 await newMessage.save();
 return {
     submitted: true,
